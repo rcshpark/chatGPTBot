@@ -1,6 +1,6 @@
 class MessageModel {
-  String? userMessage;
-  String? botMessage;
+  late String userMessage;
+  late String botMessage;
   // late int answerCounting;
 
   //테스트 모델
@@ -8,7 +8,7 @@ class MessageModel {
   // late String user_id;
   // late String email;
 
-  MessageModel({userMessage, botMessage});
+  MessageModel({required this.userMessage, required this.botMessage});
   // BoardModel({user_id, email});
 
   MessageModel.fromJson(Map<String, dynamic> json) {
