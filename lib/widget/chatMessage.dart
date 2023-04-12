@@ -54,7 +54,9 @@ class ChatMessageWidget extends StatelessWidget {
                               ?.copyWith(color: Colors.white),
                         )
                       : Text(
-                          botMessage,
+                          botMessage == 'null'
+                              ? '제가 잠깐 한눈 팔았나봐요 .. 다시 물어봐주시겠어요? '
+                              : botMessage,
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge
