@@ -1,6 +1,6 @@
 import 'package:chat_gpt/model/message_model.dart';
+import 'package:chat_gpt/widget/chatMessage.dart';
 import 'package:flutter/material.dart';
-import 'chatMessage.dart';
 import 'controller/gpt_controller.dart';
 
 class ChatBotScreen extends StatefulWidget {
@@ -74,6 +74,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
               IconButton(
                   onPressed: () {
                     _sendMessage(_controller.text);
+                    _controller.clear();
                   },
                   icon: const Icon(
                     Icons.send,
