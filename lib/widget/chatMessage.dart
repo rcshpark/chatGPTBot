@@ -59,6 +59,7 @@ class ChatMessageWidget extends StatelessWidget {
                               .textTheme
                               .bodyLarge
                               ?.copyWith(color: Colors.white),
+                          maxLines: 5,
                         )),
             ],
           ))
