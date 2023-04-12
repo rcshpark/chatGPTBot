@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:chat_gpt/model/message_model.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 Future<String> generateResponse(String input) async {
-  String token = "Bearer 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";
+  String token = "Bearer ${dotenv.env['API_KEY']}";
 
   var response = await http.post(
       Uri.parse(
@@ -21,11 +22,11 @@ Future<String> generateResponse(String input) async {
         "presence_penalty": 0
       }));
   if (response.statusCode == 200) {
-    Map<String, dynamic> data =
-        await jsonDecode(utf8.decode(response.bodyBytes));
+    Map<String, dynamic> data = jsonDecode(utf8.decode(response.bodyBytes));
     String text = data["choices"][0]["text"].toString().trim();
     return text;
   } else {
-    throw Exception("Failed to generate response: ${response.statusCode}");
+    // throw Exception("Failed to generate response: ${response.statusCode}");
+    return 'null';
   }
 }
