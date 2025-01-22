@@ -44,12 +44,6 @@ String token = "Bearer ${dotenv.env['API_KEY']}";
 </pre>
 
 <br><br/>
-
-
-## Coments
-  아직 기능 추가에 대해서 반영하지 않았다. 기능추가 부분이 완료가 되면 다시 업데이트 할 예정이다. 
-  <br><br/>
-  <br><br/>
   
 ## result 
   
